@@ -1,0 +1,34 @@
+{
+    "name": "spork/conditions",
+    "description": "A Spork Plugin",
+    "type": "library",
+    "license": "MIT",
+    "authors": [],
+    "autoload": {
+        "psr-4": {
+            "Spork\\Conditions\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spork\\Conditions\\ConditionsServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "orchestra/testbench": "^7.7"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spork\\Conditions\\Tests\\": "tests",
+            "App\\": "../../app"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ]
+    }
+}
