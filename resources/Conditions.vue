@@ -48,10 +48,10 @@
 
 <script>
 import { PlusCircleIcon } from '@heroicons/vue/solid'
-import SporkInput from '@components/SporkInput.vue';
-import SporkButton from '@components/SporkButton.vue';
-import SporkSelect from '@components/SporkSelect.vue';
-import SporkLabel from '@components/SporkLabel.vue';
+import SporkInput from '@core/components/SporkInput.vue';
+import SporkButton from '@core/components/SporkButton.vue';
+import SporkSelect from '@core/components/SporkSelect.vue';
+import SporkLabel from '@core/components/SporkLabel.vue';
 
 export default {
     components: {

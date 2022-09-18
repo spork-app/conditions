@@ -2,9 +2,10 @@
 
 namespace Spork\Conditions;
 
-use App\Spork;
+use Spork\Core\Spork;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Spork\Core\Models\FeatureList;
 
 class ConditionsServiceProvider extends RouteServiceProvider
 {
@@ -15,7 +16,8 @@ class ConditionsServiceProvider extends RouteServiceProvider
     
     public function register()
     {
-        Spork::loadWith(['conditions']);
+        FeatureList::extend('conditionals', fn () => $this->morphMany(Condition::class, 'conditionable'));
+        Spork::loadWith(['conditionals']);
 
         if (config('spork.conditions.enabled')) {
             Route::middleware($this->app->make('config')->get('spork.conditions.middleware', ['auth:sanctum']))
