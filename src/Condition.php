@@ -2,7 +2,7 @@
 
 namespace Spork\Conditions;;
 
-use App\Models\AbstractModel;
+use Spork\Core\Models\AbstractModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Kregel\LaravelAbstract\AbstractModelTrait;
@@ -11,10 +11,12 @@ class Condition extends AbstractModel
 {
     use HasFactory, AbstractModelTrait;
 
-    protected $filter = [
+    protected $fillable = [
         'comparator',
         'value',
         'parameter',
+        'conditionable_type',
+        'conditionable_id',
     ];
 
     public function conditionable(): MorphTo
@@ -39,4 +41,16 @@ class Condition extends AbstractModel
     {
         return $this->value;
     }
+
+    public function getValidationCreateRules(): array
+    {
+        return [
+            'comparator' => 'required',
+            'value' => 'required',
+            'parameter' => 'required',
+            'conditionable_type' => 'required',
+            'conditionable_id' => 'required',
+        ];
+    }
+
 }

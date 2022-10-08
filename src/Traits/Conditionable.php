@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
  */
 trait Conditionable
 {
-    public function conditions(): MorphMany
+    public function conditionals(): MorphMany
     {
         return $this->morphMany(Condition::class, 'conditionable');
     }
