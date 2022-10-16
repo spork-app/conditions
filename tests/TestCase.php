@@ -4,7 +4,7 @@ namespace Spork\Conditions\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as TestbenchTestCase;
-use Spork\Conditions\ConditionsServiceProvider.php;
+use Spork\Conditions\ConditionsServiceProvider;
 
 class TestCase extends TestbenchTestCase
 {
@@ -20,7 +20,7 @@ class TestCase extends TestbenchTestCase
     protected function getPackageProviders($app)
     {
         return [
-            ConditionsServiceProvider.php::class,
+            ConditionsServiceProvider::class,
         ];
     }
 }
