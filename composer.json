@@ -38,7 +38,7 @@
     "require": {
         "php": ">=8.0"
     },
-    "homepage": "https://github.com/spork-app/calendar",
+    "homepage": "https://github.com/spork-app/conditions",
     "keywords": [
         "spork-plugins"
     ],
