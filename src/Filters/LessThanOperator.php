@@ -22,12 +22,12 @@ class LessThanOperator extends AbstractLogicalOperator
             return strlen($firstValue) < strlen($secondValue);
         }
 
-        if (!is_numeric($firstValue)) {
+        if (! is_numeric($firstValue)) {
             // At the time of writing, I'm not sure what could end up here other than maybe objects/arrays?
             $firstValue = strlen($firstValue);
         }
 
-        if (!is_numeric($secondValue)) {
+        if (! is_numeric($secondValue)) {
             $secondValue = strlen($secondValue);
         }
 

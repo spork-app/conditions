@@ -25,7 +25,7 @@ class ContainsValueOperatorTest extends TestCase
         $condition = new ContainsValueOperator;
 
         $this->assertSame(
-            !$expectedComputation, 
+            ! $expectedComputation,
             $condition->inverse(
                 $needle,
                 $haystack
@@ -41,7 +41,7 @@ class ContainsValueOperatorTest extends TestCase
         $condition = new ContainsValueOperator;
 
         $this->assertSame(
-            !$expectedComputation, 
+            ! $expectedComputation,
             $condition->butTheOpposite(
                 $needle,
                 $haystack
@@ -54,15 +54,18 @@ class ContainsValueOperatorTest extends TestCase
         return [
             ['needle', 'this is my heystack needle', true],
             ['needle', 'this is my heystack', false],
-            ['needle', ['this','is','my','haystack','needle'], true],
-            ['needle', ['this','is','my','haystack'], false],
-            ['needle', new class {
+            ['needle', ['this', 'is', 'my', 'haystack', 'needle'], true],
+            ['needle', ['this', 'is', 'my', 'haystack'], false],
+            ['needle', new class
+            {
                 public $needle = 'hello world';
+
                 public $thing = 'th';
-            }, true],
-            ['needle', new class {
+            }, true, ],
+            ['needle', new class
+            {
                 public $thing = 'th';
-            }, false],
+            }, false, ],
         ];
     }
 }

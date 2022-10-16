@@ -15,7 +15,7 @@ class GreaterThanOperatorTest extends TestCase
         $condition = new GreaterThanOperator;
 
         $this->assertSame(
-            $expectedComputation, 
+            $expectedComputation,
             $condition->compute(
                 $needle,
                 $haystack
@@ -36,7 +36,9 @@ class GreaterThanOperatorTest extends TestCase
             [5, 'hello world', false],
             ['2018-01-01', '2019-01-01', false],
             ['2018-01-01', '2017-01-01', true],
-            [['2018-01-01'], new class {}, false],
+            [['2018-01-01'], new class
+            {
+            }, false, ],
         ];
     }
 }

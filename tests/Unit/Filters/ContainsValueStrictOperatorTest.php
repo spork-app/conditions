@@ -2,7 +2,6 @@
 
 namespace Spork\Conditions\Tests\Unit\Filters;
 
-use Spork\Conditions\Filters\ContainsValueOperator;
 use Spork\Conditions\Filters\ContainsValueStrictOperator;
 use Spork\Conditions\Tests\TestCase;
 
@@ -16,9 +15,9 @@ class ContainsValueStrictOperatorTest extends TestCase
         $condition = new ContainsValueStrictOperator;
 
         $this->assertSame(
-            $expectedComputation, 
+            $expectedComputation,
             $condition->compute(
-                $needle, 
+                $needle,
                 $haystack
             )
         );
@@ -32,7 +31,7 @@ class ContainsValueStrictOperatorTest extends TestCase
         $condition = new ContainsValueStrictOperator;
 
         $this->assertSame(
-            !$expectedComputation, 
+            ! $expectedComputation,
             $condition->inverse(
                 $needle,
                 $haystack
@@ -48,7 +47,7 @@ class ContainsValueStrictOperatorTest extends TestCase
         $condition = new ContainsValueStrictOperator;
 
         $this->assertSame(
-            !$expectedComputation, 
+            ! $expectedComputation,
             $condition->butTheOpposite(
                 $needle,
                 $haystack
@@ -61,15 +60,18 @@ class ContainsValueStrictOperatorTest extends TestCase
         return [
             ['needle', 'this is my heystack needle', true],
             ['needle', 'this is my heystack', false],
-            ['needle', ['this','is','my','haystack','needle'], true],
-            ['needle', ['this','is','my','haystack'], false],
-            ['needle', new class {
+            ['needle', ['this', 'is', 'my', 'haystack', 'needle'], true],
+            ['needle', ['this', 'is', 'my', 'haystack'], false],
+            ['needle', new class
+            {
                 public $needle = 'hello world';
+
                 public $thing = 'th';
-            }, true],
-            ['needle', new class {
+            }, true, ],
+            ['needle', new class
+            {
                 public $thing = 'th';
-            }, false],
+            }, false, ],
         ];
     }
 }

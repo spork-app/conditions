@@ -2,7 +2,6 @@
 
 namespace Spork\Conditions\Tests\Unit\Filters;
 
-use Spork\Conditions\Filters\EndsWithOperator;
 use Spork\Conditions\Filters\StartsWithOperator;
 use Spork\Conditions\Tests\TestCase;
 

@@ -8,5 +8,6 @@ interface LogicalOperator
     public function compute(mixed $firstValue, mixed $secondValue): bool;
 
     public function butTheOpposite(mixed $firstValue, mixed $secondValue): bool;
+
     public function inverse(mixed $firstValue, mixed $secondValue): bool;
 }

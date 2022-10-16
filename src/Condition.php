@@ -1,11 +1,11 @@
 <?php
 
-namespace Spork\Conditions;;
+namespace Spork\Conditions;
 
-use Spork\Core\Models\AbstractModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Kregel\LaravelAbstract\AbstractModelTrait;
+use Spork\Core\Models\AbstractModel;
 
 class Condition extends AbstractModel
 {
@@ -52,5 +52,4 @@ class Condition extends AbstractModel
             'conditionable_id' => 'required',
         ];
     }
-
 }

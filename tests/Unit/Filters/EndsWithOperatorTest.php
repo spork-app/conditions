@@ -2,9 +2,7 @@
 
 namespace Spork\Conditions\Tests\Unit\Filters;
 
-use Spork\Conditions\Filters\ContainsValueOperator;
 use Spork\Conditions\Filters\EndsWithOperator;
-use Spork\Conditions\Filters\EqualsValueOperator;
 use Spork\Conditions\Tests\TestCase;
 
 class EndsWithOperatorTest extends TestCase

@@ -2,8 +2,6 @@
 
 namespace Spork\Conditions\Filters;
 
-use Carbon\Carbon;
-
 class GreaterThanOrEqualToOperator extends AbstractLogicalOperator
 {
     public function compute(mixed $firstValue, mixed $secondValue): bool

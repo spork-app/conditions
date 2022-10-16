@@ -2,7 +2,6 @@
 
 namespace Spork\Conditions\Tests\Unit\Filters;
 
-use Spork\Conditions\Filters\GreaterThanOrEqualToOperator;
 use Spork\Conditions\Filters\LessThanOrEqualToOperator;
 use Spork\Conditions\Tests\TestCase;
 
@@ -16,7 +15,7 @@ class LessThanOrEqualToOperatorTest extends TestCase
         $condition = new LessThanOrEqualToOperator;
 
         $this->assertSame(
-            $expectedComputation, 
+            $expectedComputation,
             $condition->compute(
                 $needle,
                 $haystack
@@ -39,7 +38,9 @@ class LessThanOrEqualToOperatorTest extends TestCase
             ['hello world', 5, false],
             ['2018-01-01', '2019-01-01', true],
             ['2018-01-01', '2017-01-01', false],
-            [['2018-01-01'], new class {}, false],
+            [['2018-01-01'], new class
+            {
+            }, false, ],
         ];
     }
 }
