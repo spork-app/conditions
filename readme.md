@@ -1,6 +1,9 @@
 ## Conditions
+### What is this package?
 
-A Spork Plugin
+This package aims to consolidate logic I find myself using over and over again. Specifically, using "conditions" to filter logic like applying tags, executing an action, scheduling an event, filtering transactions, custom alerts, and much more.
+
+## Installing
 
 ```
 composer require spork/conditions

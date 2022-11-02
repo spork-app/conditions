@@ -36,7 +36,8 @@
         ]
     },
     "require": {
-        "php": ">=8.0"
+        "php": ">=8.0",
+        "spork/core": "^1.1"
     },
     "homepage": "https://github.com/spork-app/conditions",
     "keywords": [

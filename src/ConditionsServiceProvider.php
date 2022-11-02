@@ -18,6 +18,8 @@ class ConditionsServiceProvider extends RouteServiceProvider
     {
         FeatureList::extend('conditionals', fn () => $this->morphMany(Condition::class, 'conditionable'));
         Spork::loadWith(['conditionals']);
+        $this->mergeConfigFrom(__DIR__ . '/../config/spork.php', 'spork.conditions');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         if (config('spork.conditions.enabled')) {
             Route::middleware($this->app->make('config')->get('spork.conditions.middleware', ['auth:sanctum']))
